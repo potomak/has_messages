@@ -10,7 +10,7 @@ class HasMessagesGenerator < Rails::Generator::Base
       m.directory 'db/migrate'
 
       if options[:email]
-        m.directory 'app/views/notifier'
+        m.directory 'app/views/message_mailer'
         m.template 'message_with_email.rb', File.join('app/models', "message.rb")
         m.template 'message_mailer.rb', File.join('app/models', "message_mailer.rb")
         m.file 'message_notification.html.erb', File.join('app/views/message_mailer', "message_notification.html.erb"), :collision => :overwrite
