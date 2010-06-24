@@ -1,5 +1,5 @@
-class Notifier < ActionMailer::Base
-  default_url_options[:host] = "localhost:3000"  
+class MessageMailer < ActionMailer::Base
+  default_url_options[:host] = "localhost:3000"
 
   def message_notification(message)
     subject       "You have incoming message"

@@ -12,8 +12,8 @@ class HasMessagesGenerator < Rails::Generator::Base
       if options[:email]
         m.directory 'app/views/notifier'
         m.template 'message_with_email.rb', File.join('app/models', "message.rb")
-        m.template 'notifier.rb', File.join('app/models', "notifier.rb")
-        m.file 'message_notification.html.erb', File.join('app/views/notifier', "message_notification.html.erb"), :collision => :overwrite
+        m.template 'message_mailer.rb', File.join('app/models', "message_mailer.rb")
+        m.file 'message_notification.html.erb', File.join('app/views/message_mailer', "message_notification.html.erb"), :collision => :overwrite
       else
         m.template 'message.rb', File.join('app/models', "message.rb")
       end

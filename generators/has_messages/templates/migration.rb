@@ -13,6 +13,9 @@ class CreateMessages < ActiveRecord::Migration
 
       t.string :receiver_type
       t.integer :receiver_id
+      
+      t.string :attachment_type
+      t.integer :attachment_id
 
       t.integer :reply_of
 

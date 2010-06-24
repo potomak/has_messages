@@ -1,11 +1,11 @@
 = HasMessages
 
 This plugin provides a nice and easy way to create simple internal messaging
-system in your application. 
+system in your application.
 
-This is a fork of xinuc's has_messages, which adds e-mail notification support.
+This is a fork of ffmike's has_messages, which adds e-mail notification support.
 
-= implementation
+= Implementation
 
 == Usage
 
@@ -42,8 +42,13 @@ All you need to do is to make sure your ActionMailer configuration is added to
 your environment
 
 Remember to edit the template of the email at
-app/views/notifier/message_notification.html.erb to take into account the
+app/views/message_mailer/message_notification.html.erb to take into account the
 attributes of your User model
+
+== Attachments
+
+Attachments support let you include a polymorphic relation between a message
+and any of your models.
 
 === Mixin
 

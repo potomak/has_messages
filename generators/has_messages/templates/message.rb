@@ -1,6 +1,8 @@
 class Message < ActiveRecord::Base
   belongs_to :sender, :polymorphic => true
   belongs_to :receiver, :polymorphic => true
+  
+  has_one :attachment, :polymorphic => true
 
   validates_presence_of :receiver, :sender, :subject, :body
 

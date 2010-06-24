@@ -1,6 +1,8 @@
 class Message < ActiveRecord::Base
   belongs_to :sender, :polymorphic => true
   belongs_to :receiver, :polymorphic => true
+  
+  has_one :attachment, :polymorphic => true
 
   validates_presence_of :receiver, :sender, :subject, :body
 
@@ -54,6 +56,6 @@ class Message < ActiveRecord::Base
   end
 
   def deliver_message_notification!
-    Notifier.deliver_message_notification(self)
+    MessageMailer.deliver_message_notification(self)
   end
 end
